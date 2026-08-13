@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>postion in css</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            border: 2px solid black;
+            margin: 50px;
+            position: relative;
+        }
+
+        .box {
+            /* width: 70%; */
+            height: 100px;
+            background-color: aqua;
+            margin: 0px auto;
+            /* margin: 10px auto; */
+            border: 2px solid black;
+        }
+
+        /* realtive postion */
+        /* .box2{
+            background-color: green;
+            position: relative;
+            top: -10px;
+            left: -30px;
+        } */
+
+        /* absolute postion */
+         /* .box2{
+            background-color: green;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }  */
+
+        /* fixed position */
+        /* .box1{
+            position: fixed;
+            bottom: 10px;
+            right: 0;
+            width: 100px;
+            border-radius: 50%;
+        } */
+
+
+        .box2{
+            position: sticky;
+            background-color: green;
+            top: 0;
+            height: 300px;
+        } 
+
+
+        .box3, .box5, .box7{
+            background-color: bisque;
+            height: 100vh;
+        }
+        .box4, .box6{
+            background-color: blue;
+            height: 100vh;
+        }
+
+        .btn{
+            border: 2px solid black;
+            display: inline-block;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 20px;
+            background-color: aquamarine;
+            width: 100px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 
+    
+    postion types:
+    1. relative
+    2. absolute
+    3. fixed
+    4. sticky
+    -->
+
+    <!-- <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+
+
+    </div> -->
+    <div class="btn">this is me</div>
+
+</body>
+
+</html>
