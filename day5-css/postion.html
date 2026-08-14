@@ -61,12 +61,19 @@
 
 
         .box3, .box5, .box7{
+            position: relative;
+            z-index: 10;
             background-color: bisque;
-            height: 100vh;
+            /* height: 100vh; */
+            height: 100px;
         }
         .box4, .box6{
+            position: relative;
             background-color: blue;
-            height: 100vh;
+            /* height: 100vh; */
+            height: 100px;
+            top: -50px;
+            z-index: 100;
         }
 
         .btn{
@@ -105,7 +112,10 @@
 
 
     </div> -->
-    <div class="btn">this is me</div>
+    <!-- <div class="btn">this is me</div> -->
+     
+    <div class="box5"></div>
+    <div class="box4"></div>
 
 </body>
 

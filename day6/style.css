@@ -1,0 +1,87 @@
+.container{
+    /* height: 100vh;
+    width: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 6px 5px 13px -1px gray;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    font-family: poppins;
+}
+
+.heading{
+    align-self: flex-start;
+}
+
+h1{
+    font-size: 24px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form .email, .password{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 400px;
+}
+.password .pass{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.form label{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form .input{
+    padding: 7px;
+    border-radius: 8px;
+    outline: none;
+    border: 1.5px solid rgb(116, 113, 113);
+}
+
+.remember{
+    display: flex;
+    align-items: center;
+}
+
+button{
+    padding: 10px 40px;
+    cursor: pointer;
+    background-color: rgb(14, 112, 92);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+p{
+    font-size: 14px;
+}
+
+p span a{
+    color: black;
+    font-weight: 600;
+}
+

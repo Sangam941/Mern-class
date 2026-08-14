@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        ul{
+            display: flex;
+            gap: 10px;
+        }
+        ul li{
+            list-style: none;
+        }
+
+        .btn{
+            display: flex;
+            gap: 10px;
+        }
+        .signin, .signup{
+            border: 2px solid black;
+            padding: 5px 7px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+
+        <div class="btn">
+            <div class="signin">Signin</div>
+            <div class="signup">SignUp</div>
+        </div>
+    </header>
+</body>
+</html>
