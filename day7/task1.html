@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 1 of grid</title>
+
+    <style>
+        .container{
+            border: 2px solid black;
+            display: grid;
+            height: 100vh;
+            width: 100%;
+            grid-template-areas: "header header header"
+                                "nav nav nav"
+                                "section section aside"
+                                "article article aside"
+                                "footer footer footer";
+        
+        grid-template-rows: repeat(5,60px);
+                            }
+        
+
+        .box{
+            height: 50px;
+            background-color: red;
+        }
+        .box1{
+            grid-area: header;
+        }
+        .box2{
+            grid-area: nav;
+        }
+        .box3{
+            grid-area: section;
+        }
+        .box4{
+            grid-area: article;
+        }
+        .box5{
+            grid-area: aside;
+        }
+        .box6{
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">header</div>
+        <div class="box box2">nav</div>
+        <div class="box box3">section</div>
+        <div class="box box4">article</div>
+        <div class="box box5">aside</div>
+        <div class="box box6">footer</div>
+    </div>
+</body>
+</html>
