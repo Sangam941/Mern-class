@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100%;
+            border: 2px solid red;
+        }
+/* 
+        .box {
+            width: 50px;
+            height: 50px;
+            border: 7px solid red;
+            border-radius: 50%;
+            border-right: 7px solid white;
+            animation-name: hello;
+            animation-timing-function: linear;
+            animation-duration: 0.6s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+
+        }  */
+
+        /* @keyframes hello {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(360deg)
+            }
+        } */
+
+        /* @keyframes hello {
+            from{
+                background-color: red;
+            }
+            to{
+                background-color: yellow;
+                transform: translateX(80vw);
+            }
+        } */
+
+        ul{
+            display: flex;
+            gap: 10px;
+        }
+        li {
+            list-style: none;
+            cursor: pointer;
+            /* width: max-content; */
+            position: relative;
+        }
+
+        /* .line {
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: black;
+
+            transition: width 0.3s ease;
+        }
+
+        li:hover .line {
+            width: 100%;
+        } */
+
+        li::after{
+            content: '';
+            position:absolute;
+            bottom: -7px;
+            left: 0;
+            width: 0px;
+            height: 2px;
+            background-color: black;
+            transition: width 0.3s linear;
+        }
+
+        li:hover::after{
+            width: 40px;
+        }
+
+        @keyframes oai {
+            from {
+                .line {
+                    width: 0px;
+                    height: 2px;
+                    background-color: black;
+                }
+            }
+
+            to {
+                .line {
+                    width: 100px;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+
+        <div class="line"></div>
+        <ul>
+            <li>
+                home
+                <span class="line"></span>
+            </li>
+
+            <li>
+                about
+                <span class="line"></span>
+            </li>
+
+            <li>
+                contact
+                <span class="line"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

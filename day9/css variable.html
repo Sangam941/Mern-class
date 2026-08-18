@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css variable</title>
+    <style>
+
+/* global decleration for csss variable */
+        :root{
+            --color: black;
+            --bgColor: green;
+            --pColor: purple;
+        }
+
+        .contanier{
+            height: 100vh;
+            width: 100%;
+            border: 2px solid black;
+            background-color: var(--green);
+        }
+        .box1, .box3{
+            color: var(--color);
+        }
+        p{
+            --aColor: red;
+            color: var(--aColor);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">
+            <h1>this is h1 tag</h1>
+        <p>i am a paragraph tag</p>
+        </div>
+        <div class="box box2">
+            <h1>this is h1 tag</h1>
+        <p>i am a paragraph tag</p>
+        </div>
+        <div class="box box3">
+            <h1>this is h1 tag</h1>
+        <p>i am a paragraph tag</p>
+        </div>
+    </div>
+</body>
+</html>

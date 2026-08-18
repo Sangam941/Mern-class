@@ -33,10 +33,13 @@ nav button:active{
 
 /* main page styling start */
 
+main{
+    overflow: hidden;
+}
 main .hero{
-    height: 90vh;
+    height: 630px;
     /* border: 2px solid red; */
-    background-image: url('/day7/image/bgimae.webp');
+    background-image: url('image/bgimae.webp');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -74,7 +77,7 @@ main .hero{
 
 /* banner starts here */
 article {
-    width: 100vw;
+    width: 100%;
     padding: 80px 0px;
     display: flex;
     justify-content: center;
@@ -96,7 +99,7 @@ article  img{
 /* menu time */
 
 .menu{
-    width: 100vw;
+    width: 100%;
     padding: 80px 0px;
 }
 
@@ -134,7 +137,7 @@ article  img{
 main .banner2{
     height: 150px;
     width: 100%;
-    background-image: url('/day7/image/banner2.png');
+    background-image: url('image/banner2.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -161,6 +164,8 @@ main .banner2{
     text-align: center;
     gap: 20px;
     color: white;
+    position: relative;
+    z-index: 10;
 }
 
 .inside-box button{
@@ -275,7 +280,7 @@ footer .info1{
     }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
     .menu .grid{
         display: grid;
         margin: auto;
@@ -286,8 +291,42 @@ footer .info1{
         height: 250px;
     }
 
-    .banner img{
-
+    header nav{
+        padding: 15px 30px;
     }
     
+}
+
+
+
+/* animation */
+
+header{
+    animation: header 1.2s linear 1s;
+}
+
+.hero{
+    animation: hero 1.5s linear 1s;
+}
+
+
+@keyframes header {
+    from{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes hero {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
 }
