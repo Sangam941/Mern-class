@@ -112,6 +112,7 @@
 // 1
 // 0 + 1
 // 1
+
 // '5'+5
 // '55'
 // '5'-2
@@ -160,7 +161,7 @@
 >=  less then is equal to
 <=  greater than is equal to
 > less then
-<greater then
+< greater then
 
 */
 
@@ -239,6 +240,7 @@
 
 // +, - , !, typeof, ++, --
 
+// ++a  a++   
 
 
 
