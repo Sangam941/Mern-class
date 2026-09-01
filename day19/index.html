@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>card using tailwindcss</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+        .pointer{
+            cursor: pointer;
+        }
+    </style>
+  </head>
+  <body class="bg-black/80 text-white h-screen w-full flex items-center justify-center">
+    <!-- font-size:20px  -->
+    <!-- font-weight  -->
+    <!-- <p class="text-3xl text-red-950 bg-yellow-500 font-light">hello</p> -->
+
+    <!-- cursor:pointer  -->
+
+    <div class="card h-[500px] w-[500px] bg-black/80 p-4 rounded-xl shadow-md shadow-gray-500">
+      <div class="heading flex justify-between px-4 py-3 items-center">
+        <div class="logo flex gap-4 items-center justify-center">
+          <img class="h-6 cursor-pointer" src="/day19/image/logo.jpg" alt="" />
+          <p class="name">
+            pdscorg and locus_ioe • <span class="text-gray-500">2h</span>
+          </p>
+        </div>
+
+        <div class="three">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide hover:scale-70 transition ease-in-out lucide-ellipsis-icon pointer lucide-ellipsis"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+        </div>
+      </div>
+      
+      <div class="img overflow-hidden rounded-sm ">
+        <img class="hover:scale-103 cursor-pointer transition duration-300 ease-in-out"
+        src="/day19/image/791465423_18104338391615051_2536586878557873882_n.jpg"
+        alt=""
+      />
+      </div>
+
+      <div class="footer px-4">
+        <div class="icons flex justify-between py-3">
+            <div class="flex gap-4">
+                <div class="love flex gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart pointer hover:scale-70 transition ease-in-out"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+
+            <span>50</span>
+            </div>
+
+            <div class="comment flex gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon pointer hover:scale-70 transition ease-in-out lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+                2
+            </div>
+
+            <div class="repost flex gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-repeat2-icon pointer hover:scale-70 transition ease-in-out lucide-repeat-2"><path d="m2 9 3-3 3 3"/><path d="M13 18H7a2 2 0 0 1-2-2V6"/><path d="m22 15-3 3-3-3"/><path d="M11 6h6a2 2 0 0 1 2 2v10"/></svg>
+                5
+            </div>
+
+            <div class="share">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-share2-icon pointer hover:scale-70 transition ease-in-out lucide-share-2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg>
+            </div>
+
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bookmark-icon lucide-bookmark hover:scale-70 transition ease-in-out pointer"><path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"/></svg>
+        </div>
+        <p class="content">pdscorg
+Standing together, for them, for Nepal, and for hope. 🇳🇵
+</p>
+      </div>
+    </div>
+  </body>
+</html>

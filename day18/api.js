@@ -26,7 +26,7 @@ function renderCard(){
             <div class="details flex flex-col leading-5">
                 <div class="name">${data.name.first}hello</div>
                 <div class="email">${data.email}</div>
-                <div class="city">ktm</div>
+                <div class="city">${data.location.city}</div>
             </div>
         </div>
         `
