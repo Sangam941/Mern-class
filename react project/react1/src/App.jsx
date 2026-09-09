@@ -3,6 +3,7 @@
 
 
 import Card from "./components/Card"
+import Test from "./components/Test"
 
 //   const handleHello = (e)=>{
 //     console.log('hello', e)
@@ -70,6 +71,7 @@ const App = () => {
   return (
     <div className="h-screen bg-black text-white flex items-center justify-center">
       <Card/>
+      <Test/>
     </div>
   )
 }
