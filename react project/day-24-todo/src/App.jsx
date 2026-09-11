@@ -38,7 +38,7 @@ import { useEffect, useState } from "react";
 const App = () => {
   const [title, setTitle] = useState("");
   const [todos, setTodos] = useState(() => {
-    const savedTodos = localStorage.getItem("todos");
+  const savedTodos = localStorage.getItem("todos");
 
     return savedTodos ? JSON.parse(savedTodos) : [];
   });
@@ -50,6 +50,10 @@ const App = () => {
     e.preventDefault();
     console.log(title);
 
+    // check / validation for the empty input
+    // code
+
+    // [{},{}]->map->item={id,title,isCompleted}-> {...item, title:title}
     if (isEdit) {
       setTodos(
         todos.map((item) => {
@@ -65,8 +69,10 @@ const App = () => {
       const newTodo = {
         id: Date.now(), //unique id provide
         title: title,
+        isCompleted: false
       };
 
+      // [], [{},{},{}]  {}->new obj
       setTodos([...todos, newTodo]);
       setTitle("");
     }
@@ -82,15 +88,30 @@ const App = () => {
       });
     }
 
+    // [{},{},{}]
+
     setTodos(saveTodo);
   };
 
+
+  // todo = {id, title, isCompleted} -> click gareko wala ko data
   // edit todos
   const handleEdit = (todo) => {
     setEditId(todo.id);
     setTitle(todo.title);
     setIsEdit(true);
   };
+
+  // handle toggle
+  const handleToggle = (id)=>{
+    console.log(id)
+      const updateToggle = todos.map((item)=>{
+        // {}
+        return item.id == id? {...item, isCompleted: !item.isCompleted}:item
+      })
+
+      setTodos(updateToggle)
+  }
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -125,7 +146,9 @@ const App = () => {
                   className="bg-sky-300 text-black mb-2 rounded-md p-4 flex items-center justify-between"
                   key={index}
                 >
-                  <span>{item.title}</span>
+                  <span
+                  onClick={()=>handleToggle(item.id)}
+                  className={`cursor-pointer ${item.isCompleted? "line-through":""}`}>{item.title}</span>
 
                   <div className="flex gap-2">
                     <button
