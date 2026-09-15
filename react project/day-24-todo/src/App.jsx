@@ -116,7 +116,7 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
+``
   return (
     <div className="h-screen bg-black text-white flex flex-col items-center justify-center gap-5">
       <div className="main">
