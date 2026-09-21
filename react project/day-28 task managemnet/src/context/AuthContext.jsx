@@ -1,28 +1,37 @@
-import { createContext, useEffect, useState } from "react"
+import { createContext, useEffect, useState } from "react";
 
-export const AuthContexProvider = createContext()
+export const AuthContexProvider = createContext();
 
-const AuthContext = ({children}) => {
+const AuthContext = ({ children }) => {
+  const [auth, setAuth] = useState(() => {
+    const data = localStorage.getItem("authData");
 
-    const [auth, setAuth] = useState(null)
-    const [isAuth, setIsAuth] = useState(false)
+    return data ? JSON.parse(data) : null;
+  });
 
-    useEffect(() => {
-      const checkAuth = ()=>{
-        if(auth) {setIsAuth(true)}
-        else{
-            setIsAuth(false)
-        }
+  const [isAuth, setIsAuth] = useState(() => {
+    return localStorage.getItem("isAuth");
+  });
+
+  useEffect(() => {
+    const data = () => {
+      if (auth) {
+        localStorage.setItem("isAuth", true);
+        setIsAuth(true);
+      } else {
+        localStorage.setItem("isAuth", false);
+        setIsAuth(false);
       }
+    };
 
-      checkAuth()
-    }, [auth])
-    
+    data();
+  }, [auth]);
+
   return (
-    <AuthContexProvider.Provider value={{auth, setAuth, isAuth}}>
+    <AuthContexProvider.Provider value={{ auth, setAuth, isAuth, setIsAuth }}>
       {children}
     </AuthContexProvider.Provider>
-  )
-}
+  );
+};
 
-export default AuthContext
+export default AuthContext;
