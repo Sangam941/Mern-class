@@ -1,6 +1,18 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContextProvider } from "../context/CartContext";
 
 const MenuCard = ({ food }) => {
+
+  const [isAdded, setIsAdded] = useState(false)
+
+  const {addToCart} = useContext(CartContextProvider)
+
+  const handleCart = (menuItem)=>{
+    setIsAdded(true)
+    addToCart(menuItem)
+
+  }
 
   return (
     <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -47,10 +59,11 @@ const MenuCard = ({ food }) => {
           </Link>
 
           <button
-            
+            onClick={()=>handleCart(food)}
+            disabled={isAdded}
             className="rounded-lg bg-orange-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-600"
           >
-            + Cart
+             {isAdded ? "Added to Cart ✓" : "Add to Cart"}
           </button>
         </div>
       </div>

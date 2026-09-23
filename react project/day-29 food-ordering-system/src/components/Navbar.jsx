@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { CartContextProvider } from "../context/CartContext";
 
 const Navbar = () => {
-
+const {allCartItems}  =useContext(CartContextProvider)
 
   return (
     <nav className="border-b bg-white sticky top-0 z-10">
@@ -67,11 +69,11 @@ const Navbar = () => {
             <span className="text-xl">🛒</span>
             <span>Cart</span>
 
-            {/* {totalItems > 0 && (
+            {allCartItems.length > 0 && (
               <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-orange-500 px-1 text-xs font-bold text-white">
-                {totalItems}
+                {allCartItems.length}
               </span>
-            )} */}
+            )}
           </NavLink>
         </div>
       </div>

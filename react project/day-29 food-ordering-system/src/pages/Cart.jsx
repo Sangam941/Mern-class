@@ -1,31 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContextProvider } from "../context/CartContext";
 
 const Cart = () => {
-  // Empty cart
-  const cartItems = [ {
-    id: 1,
-    name: "Chicken Burger",
-    category: "Burger",
-    price: 350,
-    image:
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
-    description:
-      "Juicy grilled chicken burger with fresh lettuce, tomato, cheese, and special sauce.",
-  },
-  {
-    id: 2,
-    name: "Cheese Burger",
-    category: "Burger",
-    price: 400,
-    image:
-      "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&q=80",
-    description:
-      "Classic burger topped with melted cheese, fresh vegetables, and creamy sauce.",
+  const {allCartItems,decreaseQuantity,deliveryCharge, subTotal, totalAmount, deleteCart, increseQuantity} = useContext(CartContextProvider)
+  
+  const handleIncrement = (id) =>{
+    increseQuantity(id)
+    
   }
-]
+  const handleDecrease = (id) =>{
+    decreaseQuantity(id)
+    
+  }
 
-
-  if (cartItems.length === 0) {
+  if (allCartItems.length === 0) {
     return (
       <main className="min-h-[80vh] bg-gray-50 px-6 py-20">
         <div className="mx-auto flex max-w-2xl flex-col items-center justify-center text-center">
@@ -75,12 +64,12 @@ const Cart = () => {
         <div className="mt-10 grid gap-8 lg:grid-cols-3">
           {/* Cart Items */}
           <div className="space-y-4 lg:col-span-2">
-            {cartItems.map((item) => {
+            {allCartItems.map((item, index) => {
               const itemTotal = item.price * item.quantity;
 
               return (
                 <div
-                  key={item.id}
+                  key={index}
                   className="rounded-2xl bg-white p-5 shadow-sm"
                 >
                   <div className="flex flex-col gap-5 sm:flex-row">
@@ -118,6 +107,8 @@ const Cart = () => {
 
                         {/* Remove */}
                         <button
+
+                        onClick={()=>deleteCart(item.id)}
                           className="text-sm font-medium text-red-500 transition hover:text-red-600"
                         >
                           Remove
@@ -129,16 +120,18 @@ const Cart = () => {
                         {/* Quantity */}
                         <div className="flex items-center overflow-hidden rounded-lg border border-gray-200">
                           <button
+                          onClick={()=>handleDecrease(item.id)}
                             className="flex h-9 w-9 items-center justify-center text-lg font-semibold text-gray-700 transition hover:bg-gray-100"
                           >
                             −
                           </button>
 
-                          <span className="flex h-9 w-10 items-center justify-center border-x border-gray-200 text-sm font-semibold">
+                          <span className="text-black flex h-9 w-10 items-center justify-center border-x border-gray-200 text-sm font-semibold">
                             {item.quantity}
                           </span>
 
                           <button
+                          onClick={()=>handleIncrement(item.id)}
                             className="flex h-9 w-9 items-center justify-center text-lg font-semibold text-gray-700 transition hover:bg-gray-100"
                           >
                             +
@@ -171,7 +164,7 @@ const Cart = () => {
                   </span>
 
                   <span className="font-semibold text-gray-900">
-                    Rs. {4000}
+                    Rs. {subTotal}
                   </span>
                 </div>
 
@@ -181,7 +174,7 @@ const Cart = () => {
                   </span>
 
                   <span className="font-semibold text-gray-900">
-                    Rs. {100}
+                    Rs. {deliveryCharge}
                   </span>
                 </div>
 
@@ -192,7 +185,7 @@ const Cart = () => {
                     </span>
 
                     <span className="text-xl font-bold text-orange-500">
-                      Rs. {5000}
+                      Rs. {totalAmount}
                     </span>
                   </div>
                 </div>

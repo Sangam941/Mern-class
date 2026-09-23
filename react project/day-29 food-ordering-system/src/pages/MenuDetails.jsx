@@ -1,10 +1,9 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { menus } from "../constant/Data";
 
 const MenuDetails = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const [quantity, setQuantity] = useState(1);
 
