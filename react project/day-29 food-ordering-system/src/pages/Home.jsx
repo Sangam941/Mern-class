@@ -22,7 +22,7 @@ const Home = () => {
       : menus.filter((food) => food.category === selectedCategory);
 
   return (
-    <main className="bg-white relative">
+    <main className="bg-white relative pt-20">
       {/* ================= HERO SECTION ================= */}
       <section className="bg-orange-50">
         <div className="mx-auto grid min-h-[600px] max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2 lg:px-8">

@@ -6,7 +6,7 @@ const Navbar = () => {
 const {allCartItems}  =useContext(CartContextProvider)
 
   return (
-    <nav className="border-b bg-white sticky top-0 z-10">
+    <nav className="border-b bg-white fixed right-0 left-0 z-10">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         
         {/* Logo */}
