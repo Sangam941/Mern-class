@@ -61,7 +61,7 @@ const CartContext = ({ children }) => {
   useEffect(() => {
     const subTotalAmount = () => {
       const data = allCartItems.reduce((sum, item) => {
-        return sum + item.price * item.quantity;
+        return sum + (item.price * item.quantity);
       }, 0);
 
       setSubTotal(data);

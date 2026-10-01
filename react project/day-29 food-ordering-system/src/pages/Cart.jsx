@@ -16,7 +16,7 @@ const Cart = () => {
 
   if (allCartItems.length === 0) {
     return (
-      <main className="min-h-[80vh] bg-gray-50 px-6 py-20">
+      <main className="min-h-[100vh] bg-gray-50 px-6 py-20">
         <div className="mx-auto flex max-w-2xl flex-col items-center justify-center text-center">
           <div className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-100 text-5xl">
             🛒
