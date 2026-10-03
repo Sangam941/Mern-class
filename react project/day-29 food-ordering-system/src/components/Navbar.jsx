@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { CartContextProvider } from "../context/CartContext";
+import { AuthContextProvider } from "../context/AuthContext";
 
 const Navbar = () => {
 const {allCartItems}  =useContext(CartContextProvider)
+
+const {logout} = useContext(AuthContextProvider)
 
   return (
     <nav className="border-b bg-white fixed right-0 left-0 z-10">
@@ -75,6 +78,11 @@ const {allCartItems}  =useContext(CartContextProvider)
               </span>
             )}
           </NavLink>
+
+
+          <Link onClick={()=>logout()} className="bg-orange-500 px-8 py-2 rounded-xl font-bold text-white-700">
+            Logout
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import axios from "axios";
+import { useContext, useState } from "react";
+import { AuthContextProvider } from "../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -8,15 +8,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const {login} = useContext(AuthContextProvider)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-     const {data} = await axios.post("http://localhost:5000/api/auth/login",{ password, email})
-
-    console.log("Login Data:", data);
-
-    // Later:
-    // API call → login user
+     login(email, password)
 
     setEmail("");
     setPassword("");
@@ -25,7 +22,7 @@ const Login = () => {
   };
 
   return (
-    <main className="min-h-[calc(100vh-73px)] bg-orange-50 px-6 py-12 pt-20">
+    <main className="text-black min-h-[calc(100vh-73px)] bg-orange-50 px-6 py-12 pt-20">
       <div className="mx-auto grid max-w-6xl overflow-hidden rounded-3xl bg-white shadow-xl lg:grid-cols-2">
         {/* Left Side */}
         <div className="hidden bg-orange-500 p-12 text-white lg:flex lg:flex-col lg:justify-center">
