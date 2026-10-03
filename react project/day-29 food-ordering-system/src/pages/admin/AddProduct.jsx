@@ -55,7 +55,7 @@ const AddProduct = () => {
 
   }
 
-    navigate("/admin/all-products");
+    navigate("/admin/all-products"); 
   };
 
   return (
